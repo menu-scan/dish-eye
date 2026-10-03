@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dish Eye Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; --fg: #1a1a1a; --bg: #fff; --muted: #555; --line: #ddd; --quote: #f5f3ee; }
+    @media (prefers-color-scheme: dark) { :root { --fg: #e8e6e3; --bg: #151515; --muted: #a8a8a8; --line: #333; --quote: #1f1f1f; } }
+    body { font-family: Georgia, serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.55; color: var(--fg); background: var(--bg); }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.8rem; }
+    p, li, td, th { font-size: 1rem; }
+    a { color: inherit; }
+    .meta { color: var(--muted); }
+    blockquote { margin: 1.2rem 0; padding: 0.2rem 1rem; background: var(--quote); border-left: 3px solid var(--line); }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+<h1>Dish Eye Privacy Policy</h1>
+<p class="meta"><strong>Developer:</strong> Volodymyr Budko (EyeAppies)<br>
+<strong>Contact:</strong> <a href="mailto:eyeappies@protonmail.com">eyeappies@protonmail.com</a><br>
+<strong>Effective date:</strong> October 3, 2026</p>
+<blockquote>
+<p><strong>In short.</strong> Dish Eye has no accounts, no advertising and no behavioral analytics. To read a menu, the app sends the
+photo you take to our server and to Google&#39;s Gemini service; the photo is not stored. The app knows an installation
+by a technical identifier, never by your name, email or phone number. We do not sell data or share it for advertising.</p>
+</blockquote>
+<p>This policy covers the Dish Eye app for Android and iOS (&quot;the app&quot;), published under the name EyeAppies by Volodymyr
+Budko, an individual developer (&quot;we&quot;), who is responsible for the data described here. It explains what the app sends,
+why, and what happens to it.</p>
+<h2>What the app sends and why</h2>
+<p><strong>The menu photo.</strong> When you scan a page, the photo is sent over an encrypted connection to our server and from there to
+Google&#39;s Gemini API, which reads the dishes on it. Before sending, the app re-encodes the photo without its metadata
+(such as where it was taken). Our server does not save the photo. Google processes it under the Gemini API terms for
+paid services: it does not use the photo to improve its products and keeps requests only for a limited time to detect
+abuse. What was read from the page — dish names, their descriptions, the menu&#39;s headings — is kept under a fingerprint
+of the photo (a SHA-256 hash), so that the next person who photographs the same menu gets the result at once. The
+fingerprint cannot be turned back into the photo, and nothing about who took the photo is kept with it. The app is meant
+for menus: please do not photograph people or personal documents with it.</p>
+<p><strong>An installation identifier.</strong> The app sends an identifier of this installation with its requests: on iPhone, a random
+code the app creates and keeps in the iOS Keychain; on Android, the identifier Android gives this app on this device
+(Android ID, different for every app). It is not linked to your name, email, phone number or any account. We use it to:</p>
+<ul>
+<li>keep daily usage limits per installation (these counters are deleted after two days);</li>
+<li>count the free pages an installation has read, when the app offers free pages before a subscription;</li>
+<li>check whether the installation has an active subscription (the answer is remembered for up to one hour);</li>
+<li>confirm that a request belongs to a session the app opened (a signed token valid for 24 hours, not stored on our
+server).</li>
+</ul>
+<p>On both systems the identifier normally survives reinstalling the app, so that a reinstall does not reset the free
+pages. It may change after the device is reset or, on Android, if the app&#39;s signing key changes.</p>
+<p><strong>Your approximate country.</strong> Our hosting provider, Cloudflare, determines from the IP address the country a request
+comes from. We use the country only to describe dishes as they are usually served there. The app does not use precise
+location and does not ask for location permission.</p>
+<p><strong>The app&#39;s language.</strong> The language you chose in the app is sent so that the dishes are explained in it.</p>
+<p><strong>Proof that the request comes from the genuine app.</strong> The app uses Firebase App Check (Google), which asks Apple (App
+Attest) or Google (Play Integrity) to confirm that the request comes from an unmodified copy of the app on a genuine
+device. During this check Firebase receives an integrity token and basic technical information (such as the device type
+and software versions); our server receives only a short-lived token saying the check passed.</p>
+<p><strong>Purchases.</strong> If you subscribe, the payment is handled entirely by Google Play or the App Store; we never see your
+payment details. Subscriptions are managed through RevenueCat, which receives this installation&#39;s purchase history, its
+identifier (described above) and technical information such as locale and currency. RevenueCat uses this to keep track
+of subscriptions and to give us aggregate subscription statistics (such as how many installations subscribe). Our server
+asks RevenueCat only whether the installation has an active subscription.</p>
+<h2>Camera and photos</h2>
+<p>The camera is used only when you tap to take a photo. To pick an existing photo, the app opens the system photo picker
+and receives only the photo you choose; it has no other access to your photo library.</p>
+<h2>What stays on your phone</h2>
+<p>Saved dishes, your language choice, the interface texts and the number of free pages left are stored only on your
+device. Deleting the app deletes them; the installation identifier is the exception described above.</p>
+<h2>What the app does not do</h2>
+<p>No accounts or sign-in. No advertising, no advertising identifier, no tracking across other companies&#39; apps or websites.
+No advertising or behavioral analytics SDKs. No crash-reporting SDKs. No access to contacts, precise location, the
+microphone or files. We do not sell or rent data, and we do not share it for advertising.</p>
+<h2>Service providers</h2>
+<p>They process data on our behalf and only for the purposes above:</p>
+<ul>
+<li><strong>Cloudflare</strong> — hosting of our server and its storage. Its request logs, which may include the IP address and the
+installation identifier, are kept for up to 7 days to run and protect the service.</li>
+<li><strong>Google</strong> — Gemini API (reading the photo), Firebase App Check and Play Integrity (app integrity), Google Play
+(distribution and payments).</li>
+<li><strong>Apple</strong> — App Attest (app integrity), App Store (distribution and payments).</li>
+<li><strong>RevenueCat</strong> — subscription status and subscription statistics.</li>
+</ul>
+<p>These providers may process data outside your country, including in the United States.</p>
+<h2>How long data is kept</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Kept</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Menu photo</td>
+<td>Not stored by us; Google keeps requests for a limited time to detect abuse</td>
+</tr>
+<tr>
+<td>What was read from a menu</td>
+<td>Up to one year, with nothing linking it to you</td>
+</tr>
+<tr>
+<td>Daily usage counters</td>
+<td>Two days</td>
+</tr>
+<tr>
+<td>Free pages used by an installation</td>
+<td>While the service runs, or until you ask us to delete it</td>
+</tr>
+<tr>
+<td>Subscription check on our server</td>
+<td>Up to one hour</td>
+</tr>
+<tr>
+<td>Hosting request logs</td>
+<td>Up to 7 days</td>
+</tr>
+<tr>
+<td>Data on your phone</td>
+<td>Until you delete it or the app</td>
+</tr>
+</tbody></table>
+<h2>Your rights and choices</h2>
+<p>You can use the app without the camera: pick a photo from your gallery or try the example menu included in the app. You
+can delete everything the app stores on your device by deleting the app.</p>
+<p>Depending on where you live, you may have the right to access, correct or delete your data, to object to its processing,
+and to complain to a data protection authority. We process data to provide the service you ask for and, for usage limits
+and integrity checks, on our legitimate interest in protecting the service from abuse. Since the app has no accounts, we
+cannot look up data by your name or email. To have a subscription record deleted, write to us with the order number from
+your Google Play or App Store receipt. For any other question or request, write to <a href="mailto:eyeappies@protonmail.com">eyeappies@protonmail.com</a>.</p>
+<h2>Security</h2>
+<p>All traffic between the app and our server is encrypted (HTTPS). Sessions are signed by the server, and the keys to the
+services we use never leave it.</p>
+<h2>Children</h2>
+<p>The app is not directed to children under 13, and we do not knowingly collect data from them. If you believe a child has
+sent us data, write to us and we will delete it.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be published at the same address with a new effective date.</p>
+<h2>Contact</h2>
+<p>Volodymyr Budko — <a href="mailto:eyeappies@protonmail.com">eyeappies@protonmail.com</a></p>
+</body>
+</html>
