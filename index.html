@@ -22,16 +22,17 @@
 <h1>Dish Eye Privacy Policy</h1>
 <p class="meta"><strong>Developer:</strong> Volodymyr Budko (EyeAppies)<br>
 <strong>Contact:</strong> <a href="mailto:eyeappies@protonmail.com">eyeappies@protonmail.com</a><br>
-<strong>Effective date:</strong> October 3, 2026</p>
+<strong>Effective date:</strong> October 10, 2026</p>
 <blockquote>
-<p><strong>In short.</strong> Dish Eye has no accounts, no advertising and no behavioral analytics. To read a menu, the app sends the
-photo you take to our server and to Google&#39;s Gemini service; the photo is not stored. The app knows an installation
-by a technical identifier, never by your name, email or phone number. We do not sell data or share it for advertising.</p>
+<p><strong>In short.</strong> Signing in is optional. If you sign in with Apple or Google, we keep your email and name with your
+account; if you do not, the app knows an installation only by a technical identifier. No advertising and no behavioral
+analytics. To read a menu, the app sends the photo you take to our server and to Google&#39;s Gemini service; the photo is
+not stored. We do not sell data or share it for advertising.</p>
 </blockquote>
 <p>This policy covers the Dish Eye app for Android and iOS (&quot;the app&quot;), published under the name EyeAppies by Volodymyr
 Budko, an individual developer (&quot;we&quot;), who is responsible for the data described here. It explains what the app sends,
 why, and what happens to it.</p>
-<h2>What the app sends and why</h2>
+<h2 id="what-the-app-sends-and-why">What the app sends and why</h2>
 <p><strong>The menu photo.</strong> When you scan a page, the photo is sent over an encrypted connection to our server and from there to
 Google&#39;s Gemini API, which reads the dishes on it. Before sending, the app re-encodes the photo without its metadata
 (such as where it was taken). Our server does not save the photo. Google processes it under the Gemini API terms for
@@ -42,7 +43,7 @@ fingerprint cannot be turned back into the photo, and nothing about who took the
 for menus: please do not photograph people or personal documents with it.</p>
 <p><strong>An installation identifier.</strong> The app sends an identifier of this installation with its requests: on iPhone, a random
 code the app creates and keeps in the iOS Keychain; on Android, the identifier Android gives this app on this device
-(Android ID, different for every app). It is not linked to your name, email, phone number or any account. We use it to:</p>
+(Android ID, different for every app). If you do not sign in, it is not linked to your name or email. We use it to:</p>
 <ul>
 <li>keep daily usage limits per installation (these counters are deleted after two days);</li>
 <li>count the free pages an installation has read, when the app offers free pages before a subscription;</li>
@@ -52,6 +53,14 @@ server).</li>
 </ul>
 <p>On both systems the identifier normally survives reinstalling the app, so that a reinstall does not reset the free
 pages. It may change after the device is reset or, on Android, if the app&#39;s signing key changes.</p>
+<p><strong>An account, if you sign in.</strong> Signing in is optional: every feature works without it. If you sign in with Apple or
+Google, Firebase Authentication (a Google service) creates an account and keeps your email address, your name if Apple
+or Google shares it, and which of the two you used. With Sign in with Apple you can hide your email: we then get an
+Apple relay address that forwards to yours. We use the email and name to know your account and to write to you about
+Dish Eye — news and offers; every such email has a link to stop them. If the app sells subscriptions, your email is also
+added to this installation&#39;s subscription record at RevenueCat. You can sign out or delete the account in the app
+(About → Account): deleting removes the account from Firebase and the email from RevenueCat, and withdraws the app&#39;s
+access to your Apple or Google sign-in.</p>
 <p><strong>Your approximate country.</strong> Our hosting provider, Cloudflare, determines from the IP address the country a request
 comes from. We use the country only to describe dishes as they are usually served there. The app does not use precise
 location and does not ask for location permission.</p>
@@ -62,31 +71,31 @@ device. During this check Firebase receives an integrity token and basic technic
 and software versions); our server receives only a short-lived token saying the check passed.</p>
 <p><strong>Purchases.</strong> If you subscribe, the payment is handled entirely by Google Play or the App Store; we never see your
 payment details. Subscriptions are managed through RevenueCat, which receives this installation&#39;s purchase history, its
-identifier (described above) and technical information such as locale and currency. RevenueCat uses this to keep track
+identifier (described above), your email if you signed in, and technical information such as locale and currency. RevenueCat uses this to keep track
 of subscriptions and to give us aggregate subscription statistics (such as how many installations subscribe). Our server
 asks RevenueCat only whether the installation has an active subscription.</p>
-<h2>Camera and photos</h2>
+<h2 id="camera-and-photos">Camera and photos</h2>
 <p>The camera is used only when you tap to take a photo. To pick an existing photo, the app opens the system photo picker
 and receives only the photo you choose; it has no other access to your photo library.</p>
-<h2>What stays on your phone</h2>
+<h2 id="what-stays-on-your-phone">What stays on your phone</h2>
 <p>Saved dishes, your language choice, the interface texts and the number of free pages left are stored only on your
 device. Deleting the app deletes them; the installation identifier is the exception described above.</p>
-<h2>What the app does not do</h2>
-<p>No accounts or sign-in. No advertising, no advertising identifier, no tracking across other companies&#39; apps or websites.
+<h2 id="what-the-app-does-not-do">What the app does not do</h2>
+<p>No advertising, no advertising identifier, no tracking across other companies&#39; apps or websites.
 No advertising or behavioral analytics SDKs. No crash-reporting SDKs. No access to contacts, precise location, the
 microphone or files. We do not sell or rent data, and we do not share it for advertising.</p>
-<h2>Service providers</h2>
+<h2 id="service-providers">Service providers</h2>
 <p>They process data on our behalf and only for the purposes above:</p>
 <ul>
 <li><strong>Cloudflare</strong> — hosting of our server and its storage. Its request logs, which may include the IP address and the
 installation identifier, are kept for up to 7 days to run and protect the service.</li>
-<li><strong>Google</strong> — Gemini API (reading the photo), Firebase App Check and Play Integrity (app integrity), Google Play
-(distribution and payments).</li>
-<li><strong>Apple</strong> — App Attest (app integrity), App Store (distribution and payments).</li>
+<li><strong>Google</strong> — Gemini API (reading the photo), Firebase Authentication and Google Sign-In (accounts), Firebase App
+Check and Play Integrity (app integrity), Google Play (distribution and payments).</li>
+<li><strong>Apple</strong> — Sign in with Apple (accounts), App Attest (app integrity), App Store (distribution and payments).</li>
 <li><strong>RevenueCat</strong> — subscription status and subscription statistics.</li>
 </ul>
 <p>These providers may process data outside your country, including in the United States.</p>
-<h2>How long data is kept</h2>
+<h2 id="how-long-data-is-kept">How long data is kept</h2>
 <table>
 <thead>
 <tr>
@@ -111,6 +120,10 @@ installation identifier, are kept for up to 7 days to run and protect the servic
 <td>While the service runs, or until you ask us to delete it</td>
 </tr>
 <tr>
+<td>Account (email, name)</td>
+<td>Until you delete the account in the app or ask us to</td>
+</tr>
+<tr>
 <td>Subscription check on our server</td>
 <td>Up to one hour</td>
 </tr>
@@ -123,23 +136,24 @@ installation identifier, are kept for up to 7 days to run and protect the servic
 <td>Until you delete it or the app</td>
 </tr>
 </tbody></table>
-<h2>Your rights and choices</h2>
+<h2 id="your-rights-and-choices">Your rights and choices</h2>
 <p>You can use the app without the camera: pick a photo from your gallery or try the example menu included in the app. You
 can delete everything the app stores on your device by deleting the app.</p>
 <p>Depending on where you live, you may have the right to access, correct or delete your data, to object to its processing,
 and to complain to a data protection authority. We process data to provide the service you ask for and, for usage limits
-and integrity checks, on our legitimate interest in protecting the service from abuse. Since the app has no accounts, we
-cannot look up data by your name or email. To have a subscription record deleted, write to us with the order number from
+and integrity checks, on our legitimate interest in protecting the service from abuse. If you signed in, you can delete
+your account in the app (About → Account → Delete account) or ask us from the email of the account. Without an account
+we cannot look up data by your name or email. To have a subscription record deleted, write to us with the order number from
 your Google Play or App Store receipt. For any other question or request, write to <a href="mailto:eyeappies@protonmail.com">eyeappies@protonmail.com</a>.</p>
-<h2>Security</h2>
+<h2 id="security">Security</h2>
 <p>All traffic between the app and our server is encrypted (HTTPS). Sessions are signed by the server, and the keys to the
 services we use never leave it.</p>
-<h2>Children</h2>
+<h2 id="children">Children</h2>
 <p>The app is not directed to children under 13, and we do not knowingly collect data from them. If you believe a child has
 sent us data, write to us and we will delete it.</p>
-<h2>Changes</h2>
+<h2 id="changes">Changes</h2>
 <p>If this policy changes, the new version will be published at the same address with a new effective date.</p>
-<h2>Contact</h2>
+<h2 id="contact">Contact</h2>
 <p>Volodymyr Budko — <a href="mailto:eyeappies@protonmail.com">eyeappies@protonmail.com</a></p>
 </body>
 </html>
