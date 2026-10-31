@@ -22,11 +22,11 @@
 <h1>DishEye Privacy Policy</h1>
 <p class="meta"><strong>Developer:</strong> Volodymyr Budko (EyeAppies)<br>
 <strong>Contact:</strong> <a href="mailto:eyeappies@protonmail.com">eyeappies@protonmail.com</a><br>
-<strong>Effective date:</strong> October 30, 2026</p>
+<strong>Effective date:</strong> October 31, 2026</p>
 <blockquote>
 <p><strong>In short.</strong> Signing in is optional. If you sign in with Apple or Google, we keep your email and name with your
-account; if you do not, the app knows an installation only by a technical identifier. No advertising and no behavioral
-analytics. To read a menu, the app sends the photo you take to our server and to Google&#39;s Gemini AI — only after you
+account; if you do not, the app knows an installation only by a technical identifier. No advertising. On Android, the
+app counts installs and a few steps in it with Google Analytics for Firebase, without an advertising identifier. To read a menu, the app sends the photo you take to our server and to Google&#39;s Gemini AI — only after you
 allow it; the photo is not stored. Emails with news and offers only if you ask for them. We do not sell data or share
 it for advertising.</p>
 </blockquote>
@@ -51,7 +51,9 @@ code the app creates and keeps in the iOS Keychain; on Android, the identifier A
 <li>count the free pages an installation has read, when the app offers free pages before a subscription;</li>
 <li>check whether the installation has an active subscription (the answer is remembered for up to one hour);</li>
 <li>confirm that a request belongs to a session the app opened (a signed token valid for 24 hours, not stored on our
-server).</li>
+server);</li>
+<li>count how many new installations use the service: the first time an installation opens a session, our server notes
+the date, the approximate country and whether it is Android or iPhone.</li>
 </ul>
 <p>On both systems the identifier normally survives reinstalling the app, so that a reinstall does not reset the free
 pages. It may change after the device is reset or, on Android, if the app&#39;s signing key changes.</p>
@@ -73,11 +75,18 @@ location and does not ask for location permission.</p>
 Attest) or Google (Play Integrity) to confirm that the request comes from an unmodified copy of the app on a genuine
 device. During this check Firebase receives an integrity token and basic technical information (such as the device type
 and software versions); our server receives only a short-lived token saying the check passed.</p>
-<p><strong>Feedback and reports, if you send them.</strong> Under a dish's picture and at the end of a read menu the app asks whether
+<p><strong>Usage statistics (Android).</strong> The Android app uses Google Analytics for Firebase (Google) to count installations and
+launches, which store link or ad campaign led to an installation (from the Google Play install referrer), and a few
+steps in the app: a page of a menu read (with the number of dishes), the subscription screen opened, a subscription
+bought. Firebase receives these events with an identifier it creates for this installation, the device model, the
+system and app versions, and a region derived from the IP address. It does not get the advertising identifier, the
+Android ID, your photos, menus, account or feedback, and its advertising features are turned off. We see the numbers
+in aggregate reports and use them to understand how people find and use the app. The iPhone app does not include it.</p>
+<p><strong>Feedback and reports, if you send them.</strong> Under a dish&#39;s picture and at the end of a read menu the app asks whether
 the result looks right. If you answer (thumbs up or down, with reasons you pick and any words you type) or report a dish
 as offensive or wrong, the app sends your answer to our server together with what you were looking at — the dish name
 as printed, its translation and description, which picture was shown, or for a whole menu the number of pages and dishes
-and the dish names as read — plus the app's language, your approximate country and the installation identifier. We use
+and the dish names as read — plus the app&#39;s language, your approximate country and the installation identifier. We use
 it only to find and fix wrong pictures, translations and readings; the identifier lets us limit how many answers one
 installation can send. Please do not type personal information into the text box. The app keeps your answers on your
 phone so it does not ask about the same dish again.</p>
@@ -94,7 +103,7 @@ and receives only the photo you choose; it has no other access to your photo lib
 device. Deleting the app deletes them; the installation identifier is the exception described above.</p>
 <h2 id="what-the-app-does-not-do">What the app does not do</h2>
 <p>No advertising, no advertising identifier, no tracking across other companies&#39; apps or websites.
-No advertising or behavioral analytics SDKs. No crash-reporting SDKs. No access to contacts, precise location, the
+No advertising SDKs; no analytics other than the usage statistics described above. No crash-reporting SDKs. No access to contacts, precise location, the
 microphone or files. We do not sell or rent data, and we do not share it for advertising.</p>
 <h2 id="service-providers">Service providers</h2>
 <p>They process data on our behalf and only for the purposes above:</p>
@@ -102,7 +111,8 @@ microphone or files. We do not sell or rent data, and we do not share it for adv
 <li><strong>Cloudflare</strong> — hosting of our server and its storage. Its request logs, which may include the IP address and the
 installation identifier, are kept for up to 7 days to run and protect the service.</li>
 <li><strong>Google</strong> — Gemini API (reading the photo), Firebase Authentication and Google Sign-In (accounts), Firebase App
-Check and Play Integrity (app integrity), Google Play (distribution and payments).</li>
+Check and Play Integrity (app integrity), Google Analytics for Firebase (usage statistics, Android), Google Play
+(distribution and payments).</li>
 <li><strong>Apple</strong> — Sign in with Apple (accounts), App Attest (app integrity), App Store (distribution and payments).</li>
 <li><strong>RevenueCat</strong> — subscription status and subscription statistics.</li>
 </ul>
@@ -127,11 +137,25 @@ Check and Play Integrity (app integrity), Google Play (distribution and payments
 <td>Daily usage counters</td>
 <td>Two days</td>
 </tr>
-<tr><td>Feedback you send</td><td>Until it is no longer needed to improve the app, or until you ask us to delete it</td></tr>
-<tr><td>Reports of offensive or wrong content</td><td>90 days</td></tr>
+<tr>
+<td>Feedback you send</td>
+<td>Until it is no longer needed to improve the app, or until you ask us to delete it</td>
+</tr>
+<tr>
+<td>Reports of offensive or wrong content</td>
+<td>90 days</td>
+</tr>
 <tr>
 <td>Free pages used by an installation</td>
 <td>While the service runs, or until you ask us to delete it</td>
+</tr>
+<tr>
+<td>When an installation first used the service (date, country, platform)</td>
+<td>While the service runs, or until you ask us to delete it</td>
+</tr>
+<tr>
+<td>Usage statistics in Google Analytics</td>
+<td>Event-level data two months; aggregate reports without identifiers longer</td>
 </tr>
 <tr>
 <td>Account (email, name)</td>
@@ -155,8 +179,8 @@ Check and Play Integrity (app integrity), Google Play (distribution and payments
 can delete everything the app stores on your device by deleting the app.</p>
 <p>Depending on where you live, you may have the right to access, correct or delete your data, to object to its processing,
 and to complain to a data protection authority. We process data to provide the service you ask for, send the menu photo to
-Google&#39;s AI and news and offers by email on your consent, and, for usage limits and integrity checks, rely on our
-legitimate interest in protecting the service from abuse. You can withdraw consent at any time: emails with the switch
+Google&#39;s AI and news and offers by email on your consent, and, for usage limits, integrity checks and usage statistics, rely on our
+legitimate interest in protecting the service from abuse and in learning how the app is found and used. You can withdraw consent at any time: emails with the switch
 in About → Account or the link in any email; photos are sent only when you scan one, so not scanning sends nothing. If you signed in, you can delete
 your account in the app (About → Account → Delete account) or ask us from the email of the account. Without an account
 we cannot look up data by your name or email. To have a subscription record deleted, write to us with the order number from
