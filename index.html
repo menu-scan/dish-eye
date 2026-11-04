@@ -48,7 +48,7 @@ code the app creates and keeps in the iOS Keychain; on Android, the identifier A
 (Android ID, different for every app). If you do not sign in, it is not linked to your name or email. We use it to:</p>
 <ul>
 <li>keep daily usage limits per installation (these counters are deleted after two days);</li>
-<li>count the free pages an installation has read, when the app offers free pages before a subscription;</li>
+<li>count the free scans an installation has used, when the app offers free scans before a subscription;</li>
 <li>check whether the installation has an active subscription (the answer is remembered for up to one hour);</li>
 <li>confirm that a request belongs to a session the app opened (a signed token valid for 24 hours, not stored on our
 server);</li>
@@ -99,7 +99,7 @@ asks RevenueCat only whether the installation has an active subscription.</p>
 <p>The camera is used only when you tap to take a photo. To pick an existing photo, the app opens the system photo picker
 and receives only the photo you choose; it has no other access to your photo library.</p>
 <h2 id="what-stays-on-your-phone">What stays on your phone</h2>
-<p>Saved dishes, your language choice, the interface texts and the number of free pages left are stored only on your
+<p>Saved dishes, your language choice, the interface texts and the number of free scans left are stored only on your
 device. Deleting the app deletes them; the installation identifier is the exception described above.</p>
 <h2 id="what-the-app-does-not-do">What the app does not do</h2>
 <p>No advertising, no advertising identifier, no tracking across other companies&#39; apps or websites.
@@ -146,7 +146,7 @@ Check and Play Integrity (app integrity), Google Analytics for Firebase (usage s
 <td>90 days</td>
 </tr>
 <tr>
-<td>Free pages used by an installation</td>
+<td>Free scans used by an installation</td>
 <td>While the service runs, or until you ask us to delete it</td>
 </tr>
 <tr>
